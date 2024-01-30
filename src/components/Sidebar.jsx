@@ -1,29 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     FaBars,
-    FaEnvelope,
     FaHouseUser,
+    FaLaptop,
     FaStar,
-    FaUserAlt,
+    
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ children }) => {
+    const[isOpen, setIsOpen] = useState(false)
+    const toggle = () => setIsOpen(!isOpen)
     const menuItem = [
         {
             path: "/",
             name: "Home",
             icon: <FaHouseUser />,
         },
+        
         {
-            path: "/about",
-            name: "About",
-            icon: <FaUserAlt />,
-        },
-        {
-            path: "/contacts",
-            name: "Contacts",
-            icon: <FaEnvelope />,
+            path: "/project",
+            name: "Project",
+            icon: <FaLaptop />,
         },
         {
             path: "/skills",
@@ -34,12 +32,13 @@ const Sidebar = ({ children }) => {
 
     return (
         <div className="container">
-            <div className="sidebar">
+            <div style={{width: isOpen ? "200px" : "45px"}} className="sidebar">
                 <div className="top_section">
-                    <h1 className="logo">Логотип</h1>
-                    <div className="bars">
-                        <FaBars />
+                    <div  style={{display: isOpen ? "block" : "none"}} className="logo">ProfolioSite</div>
+                    <div style={{marginLeft: isOpen ? "45px" : "0px"}} className="bars">
+                        <FaBars  onClick={toggle}/>
                     </div>
+                </div>
                     {menuItem.map((item, index) => (
                         <NavLink
                             to={item.path}
@@ -48,13 +47,13 @@ const Sidebar = ({ children }) => {
                             activeClassName="active"
                         >
                             <div className="icon">{item.icon}</div>
-                            <div className="link_text">{item.name}</div>
+                            <div  style={{display: isOpen ? "block" : "none"}}className="link_text">{item.name}</div>
                         </NavLink>
                     ))}
-                </div>
-
+               
+               </div>
                 <main>{children}</main>
-            </div>
+            
         </div>
     );
 };
