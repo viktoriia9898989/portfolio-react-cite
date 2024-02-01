@@ -1,0 +1,33 @@
+
+.projects-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.projects-list a{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: rgb(105, 46, 122);
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration: underline;
+    
+}
+
+
+
+.projects-list a:hover{
+    color: purple;
+}
+
+.projects-list img{
+    width: 500px;
+    height: 250px;
+    transition: all 0.3s ease-in-out;
+   
+
+}
+

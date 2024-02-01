@@ -19,8 +19,8 @@ const Sidebar = ({ children }) => {
         },
         
         {
-            path: "/project",
-            name: "Project",
+            path: "/projects",
+            name: "Projects",
             icon: <FaLaptop />,
         },
         {

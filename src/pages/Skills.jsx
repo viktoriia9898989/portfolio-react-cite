@@ -6,7 +6,7 @@ import {
 import './skills.css'
 
 const Skills = () =>{
-    const iconStyle = { color: 'blue' , marginRight:' 15px'};
+    const iconStyle = { color: 'rgb(105, 46, 122)' , marginRight:' 15px'};
     return(
 
 

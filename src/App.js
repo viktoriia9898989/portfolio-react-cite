@@ -5,6 +5,8 @@ import Sidebar from "./components/Sidebar";
 import Skills from "./pages/Skills";
 import Home from "./pages/Home";
 
+import Projects from "./pages/Projects";
+
 function App() {
   return (
     
@@ -15,6 +17,7 @@ function App() {
           <Route path="/"element={<Home/>}></Route>
             <Route path="/home"element={<Home/>}></Route>
             <Route path="/skills"element={<Skills/>}></Route>
+            <Route path="/projects"element={<Projects/>}></Route>
           </Routes>
           </Sidebar>
           </BrowserRouter>
